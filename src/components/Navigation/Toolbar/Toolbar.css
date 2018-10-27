@@ -1,0 +1,9 @@
+.header{
+    background:black;
+    color:white;
+    padding:0px 10px;
+}
+.header div{
+    font-size:22px;
+    display:inline-block;
+}

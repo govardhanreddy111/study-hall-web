@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Switch} from 'react-router-dom';
+import Toolbar from './components/Navigation/Toolbar/Toolbar';
+import Layout from './hoc/Layout/Layout';
+import StudyHallHome from './containers/studyHallHome/home';
+import Login from './containers/Auth/Login/Login';
+import Register from './containers/Auth/Register/Register';
+import CreateHall from './containers/CreateHall/create';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Layout>
+           <Toolbar />
+         <Switch>
+            <Route path="/" exact component={StudyHallHome}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
+            <Route path="/create" component={CreateHall}/>
+         </Switch>
+        </Layout>
       </div>
     );
   }
